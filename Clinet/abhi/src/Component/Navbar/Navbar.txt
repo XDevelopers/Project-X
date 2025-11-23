@@ -1,0 +1,48 @@
+import React from "react";
+import logo from "../../assets/NavImages/logo.png";
+import { FiShoppingCart } from "react-icons/fi";
+import "./Navbar.css";
+
+const Navbar = () => {
+  const [toggle, setToggle] = React.useState(false);
+  const NavMoblie = `flex sm:hidden absolute ${
+    toggle ? "translate-y-0" : "-translate-y-[200%]"
+  } transition-transform duration-400 ease-in-out bg-[#6DBE45] -z-50  w-full  h-36 justify-around  flex-col items-center top-20  text-white font-bold gap-2`;
+  // const ham=`line h-0.5 w-8.5 bg-white`;
+  return (
+    <>
+      <div className="main w-full h-20 bg-[#6DBE45]     overflow-hidden flex text-[#F4F1DE] justify-around p-2 items-center">
+        <img src={logo} className="h-14 w-14" alt="" />
+        <ul className="hidden sm:flex font-bold gap-20">
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Services</li>
+        </ul>
+
+        <ul className={NavMoblie}>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Services</li>
+        </ul>
+     
+        <div className="log">
+          <FiShoppingCart className="text-4xl text-white" />
+        </div>
+           <div
+          className="hamburger flex sm:hidden flex-col gap-2"
+          onClick={() => {
+            setToggle(!toggle);
+          }}
+        >
+          <div className={toggle?"line h-0.5 w-8.5  transition-transform duration-400 ease-in-out bg-white rotate-45 translate-y-2.5 ":"line h-0.5 transition-transform duration-400 ease-in-out w-8.5 bg-white"}></div>
+          <div className={toggle?" opacity-0 transition-transform duration-400 ease-in-out line h-0.5 w-8.5 bg-white":"line h-0.5 w-8.5 transition-transform duration-400 ease-in-out bg-white"}></div>
+          <div className={toggle?"line h-0.5 w-8.5 transition-transform duration-400 ease-in-out bg-white -rotate-45  -translate-y-2":"line h-0.5 transition-transform duration-400 ease-in-out w-8.5 bg-white"}></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
