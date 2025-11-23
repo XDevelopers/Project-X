@@ -20,9 +20,4 @@ connectDb()
     });
   });
 
-git init
-git add .
-git commit -m "Let's Begain"
-git branch -M main
-git remote add origin https://github.com/XDevelopers/Project-X.git
-git push -u origin main
+
