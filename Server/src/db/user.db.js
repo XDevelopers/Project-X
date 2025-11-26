@@ -5,7 +5,7 @@ import db_name from "../../contrains.js";
 const connectedDb = async () => {
   try {
     const instance = await mongoose.connect(
-      `${process.env.MONGO_URL}/${db_name}`
+      `${process.env.MONGO_URL}`
     );
     console.log(`mongodbconnect successfully ${instance.connection.host}`);
   } catch (error) {

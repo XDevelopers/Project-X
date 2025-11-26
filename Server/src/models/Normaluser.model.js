@@ -7,6 +7,11 @@ const UserSchema=new mongoose.Schema({
             type:String,
             required:true,
         },
+        isverifyed:{
+            type:Number,
+            required:true,
+            enum: [1,2],
+        },
         email:{
             type:String,
             required:true,
